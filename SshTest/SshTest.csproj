@@ -55,9 +55,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SshViewer\SshViewer.csproj">
+    <ProjectReference Include="..\SshViewer\SshExplorer.csproj">
       <Project>{fa046f58-ab29-46f1-a378-ba25c1858b89}</Project>
-      <Name>SshViewer</Name>
+      <Name>SshExplorer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

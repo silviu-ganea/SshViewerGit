@@ -16,11 +16,18 @@ namespace SshTest
             string user = "alarm";
             string pw = "alarm";
 
-            SShViewer sshViewer = new SShViewer();
-            sshViewer.connect(ip, user, pw);
-            var xml = sshViewer.getFileStructXML();
+            string error;
+            
+            SshExplorer sshViewer = new SshExplorer();
+            var res = sshViewer.connect(ip, user, pw, out error);
 
-            sshViewer.createNewFlashContainer();
+            var xml = sshViewer.getFileStructXML(out error);
+
+            res = sshViewer.createFlashContainer("d:/casdev/GIT/BR213IC-GC-EntryLine-MY16/adapt/gen/e009_40_silviu", "/mnt/intflash/flashfiles/213HL/", "e008_20_silviu", out error);
+            
+            res = sshViewer.removeFlashContainer("/mnt/intflash/flashfiles/213HL/e008_20_silviu", out error);
+
+            sshViewer.disconnect(out error);
         }
     }
 }

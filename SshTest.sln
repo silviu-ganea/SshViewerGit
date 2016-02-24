@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SshTest", "SshTest\SshTest.csproj", "{59DA1AC6-A6DE-4BB4-9593-B5C074EB277B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SshViewer", "SshViewer\SshViewer.csproj", "{FA046F58-AB29-46F1-A378-BA25C1858B89}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SshExplorer", "SshViewer\SshExplorer.csproj", "{FA046F58-AB29-46F1-A378-BA25C1858B89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
