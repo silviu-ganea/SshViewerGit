@@ -6,9 +6,11 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using Renci.SshNet;
 using System.Xml.XPath;
 using System.Security.Cryptography;
+using Renci.SshNet;
+using Renci.SshNet.Sftp;
+using Renci.SshNet.Common;
 
 
 namespace SshV
@@ -394,6 +396,28 @@ namespace SshV
                 Console.Write(e.Message);
                 return false;
             }
+            return result;
+        }
+
+        public bool downloadFile(string fromPath, string toPath, out string error)
+        {
+            bool result = true;
+            error = null;
+            try
+            {
+                ScpClient scpClient = new ScpClient(ip, user, pw);
+                scpClient.Connect();
+
+                scpClient.Download(fromPath, new DirectoryInfo(toPath));
+                scpClient.Disconnect();
+            }
+            catch (Exception e)
+            {
+                result = false;
+                error = e.Message;
+            }
+            
+
             return result;
         }
     }

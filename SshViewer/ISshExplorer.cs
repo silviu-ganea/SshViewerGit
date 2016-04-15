@@ -16,6 +16,7 @@ namespace SshV
         bool addFlashFile(string origin, string destination, out string error);
         bool removeFlashFile(string path, out string error);
         bool removeFlashContainer(string path, out string error);
+        bool downloadFile(string fromPath, string toPath, out string error);
         
     }
 }
